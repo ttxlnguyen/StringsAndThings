@@ -15,7 +15,13 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int count = 0; // count number of words
+        String given[] = input.split(" "); // turning string into array ignoring spaces in the process
+        for (int i = 0; i < given.length; i++) { // iterating through array
+            if (given[i].trim().endsWith("y") || given[i].trim().endsWith("z")) // checks if words at index[i] ends with y or z
+                count++; // increments if above is true
+        }
+        return count;
     }
 
     /**
@@ -42,7 +48,17 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int isCounter = 0;
+        int notCounter = 0;
+        for (int i = 1; i < input.length();i++){ // forloop to check consecutive letters matching is/not
+            if (input.charAt(i-1) == 'i' && input.charAt(i)=='s'){ // logic for is
+                isCounter++;
+            }
+            if (i >= 2 && input.charAt(i-2)=='n' && input.charAt(i-1)=='o' && input.charAt(i) == 't'){ // logic for not
+                notCounter++;
+            }
+        }
+        return (isCounter == notCounter);
     }
 
     /**
