@@ -8,7 +8,7 @@ public class StringsAndThings {
 
     /**
      * Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count,
-     * but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic
+     * but not the 'y' in "yellow" (not case-sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic
      * letter immediately following it. (Note: Character.isLetter(char) tests if a char is an alphabetic letter.)
      * example : countYZ("fez day"); // Should return 2
      *           countYZ("day fez"); // Should return 2
@@ -26,7 +26,7 @@ public class StringsAndThings {
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
-     * been removed (not case sensitive). You may assume that the remove string is length 1 or more.
+     * been removed (not case-sensitive). You may assume that the remove string is length 1 or more.
      * Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
      *
      * example : removeString("Hello there", "llo") // Should return "He there"
@@ -35,13 +35,13 @@ public class StringsAndThings {
      */
     public String removeString(String base, String remove){
         String input = base;
-        input = input.replace(remove, "");
-        return input;
+        input = input.replace(remove, ""); // places 'remove' with empty ""
+        return input; // return input.replace(remove, ""); - condensed return statement
     }
 
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
-     * to the number of appearances of "not" anywhere in the string (case sensitive)
+     * to the number of appearances of "not" anywhere in the string (case-sensitive)
      *
      * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
@@ -50,7 +50,7 @@ public class StringsAndThings {
     public Boolean containsEqualNumberOfIsAndNot(String input){
         int isCounter = 0;
         int notCounter = 0;
-        for (int i = 1; i < input.length();i++){ // forloop to check consecutive letters matching is/not
+        for (int i = 1; i < input.length();i++){ // for loop to check consecutive letters matching is/not
             if (input.charAt(i-1) == 'i' && input.charAt(i)=='s'){ // logic for is
                 isCounter++;
             }
